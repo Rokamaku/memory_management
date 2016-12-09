@@ -10,8 +10,10 @@ int main() {
 	char* second_malloc = my_malloc(200);
 	//char* second_malloc = malloc(200);
 	char* third_malloc = my_malloc(300);
+
+	my_free(third_malloc);
+	while (1) {}
 	//char* third_malloc = malloc(300);
-	printf("Malloc\n");
 	//free(first_malloc);
 	//free(second_malloc);
 	//free(third_malloc);
