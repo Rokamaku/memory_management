@@ -39,6 +39,7 @@ static void DelNode(char* Node) {
 		free(curr->memory_variable);
 		free(curr);
 		curr = head;
+		nMemory--;
 		return;
 	}
 	int indexCurr = 0;
@@ -48,12 +49,14 @@ static void DelNode(char* Node) {
 				curr->prev->next = NULL;
 				free(curr->memory_variable);
 				free(curr);
+				nMemory--;
 				return;
 			}
 			curr->prev->next = curr->next;
 			curr->next->prev = curr->prev;
 			free(curr->memory_variable);
 			free(curr);
+			nMemory--;
 			break;
 		}
 		indexCurr++;
@@ -70,6 +73,7 @@ static void DelAll() {
 		free(p);
 	}
 	head = NULL;
+	nMemory = 0;
 }
 
 
